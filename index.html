@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iOS specific tags -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Maias Portfolio">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- Touch icons -->
+<link rel="apple-touch-icon" href="images/icon-152.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/icon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon-180.png">
+<link rel="apple-touch-icon" sizes="167x167" href="images/icon-167.png">
+
+<!-- Splash screens -->
+<link rel="apple-touch-startup-image" href="images/splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="images/splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="images/splash-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="images/splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+
+    <title>Maias - IT Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- واجهة الإقلاع -->
+    <div id="splash-screen">
+        <div class="splash-stars"></div>
+        <div class="splash-stars2"></div>
+        <div class="splash-stars3"></div>
+        
+        <div class="splash-container">
+            <!-- الحاوية الخاصة بالصورة -->
+            <div class="profile-container">
+                <div class="profile-frame">
+                    <div class="profile-inner-frame">
+                        <div class="profile-gradient-border">
+                            <img src="images/img.jpg" alt="Maias Profile" class="splash-profile-photo">
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-ring"></div>
+                <div class="photo-ring2"></div>
+                <div class="photo-ring3"></div>
+            </div>
+            
+            <!-- الحاوية الخاصة بالاسم -->
+            <div class="name-container">
+                <h1 class="splash-name">
+                    <span class="name-letter">M</span>
+                    <span class="name-letter">a</span>
+                    <span class="name-letter">i</span>
+                    <span class="name-letter">a</span>
+                    <span class="name-letter">s</span>
+                </h1>
+                <div class="name-title">
+                    <span class="title-word">Information</span>
+                    <span class="title-word">Technology</span>
+                    <span class="title-word">Engineer</span>
+                </div>
+            </div>
+            
+            <!-- مؤشر التحميل -->
+            <div class="loading-container">
+                <div class="loading-bar">
+                    <div class="loading-progress" id="loadingProgress"></div>
+                </div>
+                <div class="loading-text" id="loadingText" data-i18n="splash.loading">Loading Portfolio...</div>
+            </div>
+            
+            <!-- أزرار التحكم -->
+            <div class="skip-container">
+                <button class="skip-btn" id="skipBtn" data-i18n="splash.skip">
+                    <i class="fas fa-forward"></i> Skip Intro
+                </button>
+                <button class="enter-btn" id="enterBtn" style="display: none;" data-i18n="splash.enter">
+                    <i class="fas fa-sign-in-alt"></i> Enter Portfolio
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- المحتوى الرئيسي للموقع -->
+    <div class="main-content">
+        <nav class="navbar">
+            <div class="logo"><span>IT</span>Engineer</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#portfolio" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <!-- زر تبديل اللغات -->
+                <button class="language-switcher" id="languageSwitcher" aria-label="Switch language">
+                    <span class="lang-text" data-i18n="lang.ar">العربية</span>
+                    <i class="fas fa-globe"></i>
+                </button>
+                
+                <!-- زر القائمة المتنقلة -->
+                <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-right">
+                    <p class="intro" data-i18n="hero.intro">Hello, I'm</p>
+                    <h1 class="hero-name" data-i18n="hero.name" >Maias</h1>
+                    <h2 class="hero-title" data-i18n="hero.title">Information Technology Engineer</h2>
+                    <p class="hero-description" data-i18n="hero.description">
+                        I expand my skills and discover new ways to innovate.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="maias.pdf" class="btn download-btn" data-i18n="hero.downloadCV">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="btn contact-btn" data-i18n="hero.contactMe">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p data-i18n="stats.projects">Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>30+</h3>
+                            <p data-i18n="stats.clients">Satisfied Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5+</h3>
+                            <p data-i18n="stats.experience">Years of Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Animated circles around the image -->
+                <div class="circles-container">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                    <div class="circle circle-4"></div>
+                    <div class="circle circle-5"></div>
+                    
+                    <!-- Icons on the circles -->
+                    <div class="circle-icon icon-1">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="circle-icon icon-2">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <div class="circle-icon icon-3">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="circle-icon icon-4">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="circle-icon icon-5">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="circle-icon icon-6">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="circle-icon icon-7">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <div class="circle-icon icon-8">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    
+                    <!-- Profile picture in the center -->
+                    <div class="profile-img-container">
+                        <img src="images/img.jpg" alt="Profile" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n-key="about" data-i18n="about.title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-i18n="about.p1">I am an IT engineer specializing in high-performance building and practical design.</p>
+                        <p data-i18n="about.p2">I work on developing modern web applications, optimizing technical systems, and transforming ideas into effective and scalable digital products.</p>
+                        <p data-i18n="about.p3">I believe that code is not just about creating real solutions, but about developing them. I always strive to deliver exceptional user experiences and stable systems that meet business needs and keep pace with technological advancements.</p>
+                    
+                        <div class="skills">
+                            <h3 data-i18n="about.skills">Skills</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/img.jpg" alt="About Image" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n-key="portfolio" data-i18n="portfolio.title">Projects</h2>
+                <div class="portfolio-grid">
+                    
+                    <!-- First Project - Quick-Mail -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/quick_mail.jpg" alt="Quick-Mail Application">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Quick-Mail Application</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Agora</span>
+                                <span class="project-tag">Supabase</span>
+                                <span class="project-tag">Flutter</span>
+                            </div>
+                            <p class="project-description">
+                                A unified communication application that combines instant messaging, voice and video calls, and email in a single, integrated interface.
+                            </p>
+                            <div class="portfolio-overlay">
+                                <h3>Quick-Mail Application</h3>
+                                <p>Cross-platform unified communication app</p>
+                                <a href="#" class="btn" data-i18n="buttons.viewProject">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Second Project - Mahrab -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/mahrab.jpg" alt="Mahrab Charity">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Mahrab Charity</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <p class="project-description">
+                                A charitable platform aimed at building and serving mosques by supporting projects, receiving donations, and enabling volunteers.
+                            </p>
+                            <div class="portfolio-overlay">
+                                <h3>Mahrab Charity</h3>
+                                <p>Mahrab Charity Platform</p>
+                                <a href="#" class="btn" data-i18n="buttons.viewProject">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Third Project - Book Store -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/book_store.jpg" alt="Book Store">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Book Store</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">CSS</span>
+                            </div>
+                            <p class="project-description">
+                                A complete online bookstore with a delivery system, advanced search features, and personalized recommendations.
+                            </p>
+                            <div class="portfolio-overlay">
+                                <h3>Book Store</h3>
+                                <p>Online Book Selling Platform</p>
+                                <a href="#" class="btn" data-i18n="buttons.viewProject">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Fourth Project - Laptop Store -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/laptob.jpg" alt="Laptop Store">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Laptop Store</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <p class="project-description">
+                                An online store for selling laptops, offering an easy and diverse shopping experience with a clean and smooth user interface.
+                            </p>
+                            <div class="portfolio-overlay">
+                                <h3>Laptop Store</h3>
+                                <p>Online Laptop Store</p>
+                                <a href="#" class="btn" data-i18n="buttons.viewProject">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Fifth Project - Crypto Dashboard -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/cryptomaster.jpg" alt="Cryptomaster">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Cryptomaster</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <p class="project-description">
+                                An advanced administrative platform for tracking and analyzing cryptocurrency data and financial investments.
+                            </p>
+                            <div class="portfolio-overlay">
+                                <h3>Cryptomaster</h3>
+                                <p>Cryptocurrency Analysis Platform</p>
+                                <a href="#" class="btn" data-i18n="buttons.viewProject">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sixth Project - iPhone Store -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="images/iphone.jpg" alt="iPhone Store">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>iPhone Store</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <p class="project-description">
+                                A specialized platform for selling Apple phones, showcasing the latest iPhone models with clear specifications and attractive design.
+                            </p>
+                            <div class="portfolio-overlay">
+                                <h3>iPhone Store</h3>
+                                <p>Apple Phone Sales Platform</p>
+                                <a href="#" class="btn" data-i18n="buttons.viewProject">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title" data-i18n-key="contact" data-i18n="contact.title">Contact Me</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>myasalqfyly@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+967 735540232</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Yemen - Taiz</p>
+                        </div>
+                    
+                        <div class="social-links-contact">
+                            <a href="https://github.com/Amr-An3m" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.instagram.com/mc4.e?igsh=MXZpcDRyNDVrazJyNQ==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/967735540232" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="whatsappForm">
+                        <div class="form-group">
+                            <input type="text" id="userName" data-i18n-placeholder="contact.namePlaceholder" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="userEmail" data-i18n-placeholder="contact.emailPlaceholder" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="userSubject" data-i18n-placeholder="contact.subjectPlaceholder" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="userMessage" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Your Message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-i18n="contact.sendWhatsApp">Send via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // إضافة كود التحكم بواجهة الإقلاع
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const loadingProgress = document.getElementById('loadingProgress');
+            const loadingText = document.getElementById('loadingText');
+            const skipBtn = document.getElementById('skipBtn');
+            const enterBtn = document.getElementById('enterBtn');
+            const mainContent = document.querySelector('.main-content');
+            
+            // تشغيل مؤشر التحميل تلقائياً بعد تأخير
+            setTimeout(() => {
+                loadingProgress.style.width = '100%';
+                loadingText.textContent = loadingText.getAttribute('data-i18n') || 'Ready!';
+                
+                // بعد اكتمال التحميل، إظهار زر الدخول
+                setTimeout(() => {
+                    if (skipBtn) skipBtn.style.display = 'none';
+                    if (enterBtn) enterBtn.style.display = 'inline-block';
+                }, 500);
+            }, 1000);
+            
+            // زر تخطي المقدمة
+            if (skipBtn) {
+                skipBtn.addEventListener('click', function() {
+                    enterPortfolio();
+                });
+            }
+            
+            // زر الدخول للموقع
+            if (enterBtn) {
+                enterBtn.addEventListener('click', function() {
+                    enterPortfolio();
+                });
+            }
+            
+            // وظيفة الدخول للموقع
+            function enterPortfolio() {
+                splashScreen.classList.add('splash-hidden');
+                
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    mainContent.classList.add('show');
+                    
+                    // بدء التأثيرات في الموقع الرئيسي
+                    if (typeof startMainEffects === 'function') {
+                        startMainEffects();
+                    }
+                }, 1000);
+            }
+            
+            // الدخول التلقائي بعد 8 ثواني
+            setTimeout(() => {
+                if (!splashScreen.classList.contains('splash-hidden')) {
+                    enterPortfolio();
+                }
+            }, 8000);
+        });
+    </script>
+</body>
+</html>
